@@ -1,0 +1,38 @@
+h1 {
+    color: white;
+    margin-left: 15px;
+    background-color: rgb(199, 98, 4);
+    padding-bottom: 5px;
+}
+
+#text-section {
+    background-color: rgb(216, 142, 108);
+    width: 41.66666667%;
+    margin-bottom: 10px;
+    padding: 25px 10px;
+}
+
+#test-div {
+    /* position: absolute;
+    top: 400px; */
+}
+
+.clearfix {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#random-number-div {
+    Width: 200px;
+    background-color: rgb(0, 168, 0);
+    margin-left: 15px;
+    margin-right: 5px;
+    height: 100px;
+}
+
+#score-count {
+    width: 100px;
+    background-color: cyan; 
+    height: 100px;
+}
