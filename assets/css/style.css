@@ -6,7 +6,7 @@ h1 {
 }
 
 #text-section {
-    background-color: rgb(216, 142, 108);
+    background-color: rgb(247, 182, 122);
     width: 41.66666667%;
     margin-bottom: 10px;
     padding: 25px 10px;
@@ -35,4 +35,12 @@ h1 {
     width: 100px;
     background-color: cyan; 
     height: 100px;
+}
+
+#counter {
+    width: 200px;
+    height: 50px;
+    padding-left: 10px;
+    margin-left: 0px;
+    background-color: rgb(247, 182, 122);
 }

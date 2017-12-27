@@ -46,6 +46,7 @@ $(document).ready();{
             newImg.css("height", 100);
             crystalDiv.append(newImg);
             randomNumber = randomInteger(min, max);
+            $("#random-number").text(randomNumber);
         }
     }
 
@@ -59,8 +60,6 @@ $(document).ready();{
         $("#score-display").text(0);
         $("#loss-count").text(lossCount);
         randomInteger(min, max);
-        randomNumber = randomInteger(min, max);
-        $("#random-number").text(randomNumber);
         $(".crystal-image").detach();
         imageHandler();
     }
@@ -71,8 +70,6 @@ $(document).ready();{
         $("#score-display").text(0);
         $("#win-count").text(winCount);
         randomInteger(min, max);
-        randomNumber = randomInteger(min, max);
-        $("#random-number").text(randomNumber);
         $(".crystal-image").detach();
         imageHandler();
     }
