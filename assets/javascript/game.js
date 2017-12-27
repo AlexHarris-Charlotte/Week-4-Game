@@ -18,9 +18,23 @@ $(document).ready();{
     var winCount = 0;
     var max = 120;
     var min = 19;
-    var randomNumber = randomInteger(min, max);
+    var randomNumber;
+    $("#score-display").text(0);
 
     var crystalDiv = $("#crystal-area");
+    
+    imageHandler();
+    $("#random-number").text(randomNumber);
+    $(document).on("click", ".crystal-image", function() {
+        var crystalValue = ($(this).attr("data-crystalvalue"));
+        crystalValue = parseInt(crystalValue);
+        counter += crystalValue;
+        $("#score-display").text(counter);
+        console.log(counter);
+        outcomeHandler();
+    })    
+
+    // Game functions
     function imageHandler() {
         for(var i = 0; i < crystalImages.length; i++){
             var newImg = $("<img>");
@@ -28,25 +42,13 @@ $(document).ready();{
             newImg.addClass("crystal-image");
             newImg.attr("src", crystalImages[i]);
             newImg.attr("data-crystalvalue", crystalValue);
-            newImg.css("width", 200);
-            newImg.css("height", 200);
+            newImg.css("width", 100);
+            newImg.css("height", 100);
             crystalDiv.append(newImg);
+            randomNumber = randomInteger(min, max);
         }
     }
-    imageHandler();
-    $(".crystal-image").on("click", function() {
-        var crystalValue = ($(this).attr("data-crystalvalue"));
-        crystalValue = parseInt(crystalValue);
-        counter += crystalValue;
-        $("#score-display").text(counter);
-        console.log(counter);
-        outcomeHandler();
-    })
 
-    $("#random-number").text(randomNumber);
-    
-
-    // Game functions
     function randomInteger(min, max) {
         return Math.floor(Math.random() * (max - min) )+ min;
     }
@@ -54,18 +56,24 @@ $(document).ready();{
     function losingOutcome() {
         counter = 0;
         lossCount ++;
+        $("#score-display").text(0);
         $("#loss-count").text(lossCount);
         randomInteger(min, max);
+        randomNumber = randomInteger(min, max);
         $("#random-number").text(randomNumber);
+        $(".crystal-image").detach();
         imageHandler();
     }
 
     function winningOutcome() {
         counter = 0;
         winCount ++;
+        $("#score-display").text(0);
         $("#win-count").text(winCount);
         randomInteger(min, max);
+        randomNumber = randomInteger(min, max);
         $("#random-number").text(randomNumber);
+        $(".crystal-image").detach();
         imageHandler();
     }
 
